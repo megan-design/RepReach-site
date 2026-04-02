@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civic Action Guides — How to Contact Congress on Every Issue | RepReach</title>
+  <meta name="description" content="Step-by-step guides for contacting your representative on the issues that matter most — from Medicaid and climate to voting rights and reproductive freedom. RepReach makes it easy." />
+  <link rel="canonical" href="https://repreach.app/issues" />
+
+  <meta property="og:title" content="Civic Action Guides — How to Contact Congress on Every Issue" />
+  <meta property="og:description" content="Ready-made scripts and rep finder for every major issue in Congress right now." />
+  <meta property="og:url" content="https://repreach.app/issues" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Civic Action Guides — Contact Congress on Every Issue",
+    "description": "Step-by-step guides to contacting your representative on every major federal issue, with scripts, representative finder, and RepReach app integration.",
+    "url": "https://repreach.app/issues",
+    "publisher": { "@type": "Organization", "name": "RepReach", "url": "https://repreach.app" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0d1b2a; --red: #d03a2f; --cream: #f5f0e8;
+      --gold: #c9973a; --text: #1a1a2e; --muted: #5a6272;
+      --border: #ddd8cc; --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+    nav {
+      background: var(--navy); padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem; color: var(--cream); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-cta { background: var(--red); color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 6px; }
+
+    .hero { background: var(--navy); color: var(--cream); padding: 60px 24px 52px; }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4.5vw, 2.7rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.15; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { color: rgba(245,240,232,0.78); font-size: 1.05rem; max-width: 520px; }
+
+    .filters { max-width: 960px; margin: 40px auto 0; padding: 0 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .filter-btn { background: var(--white); border: 1px solid var(--border); color: var(--text); font-size: 0.82rem; font-weight: 500; padding: 7px 16px; border-radius: 20px; cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+    .grid-wrap { max-width: 960px; margin: 32px auto 80px; padding: 0 24px; }
+    .category-section { margin-bottom: 48px; }
+    .category-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .issues-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+
+    .issue-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+      padding: 20px 22px; text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .issue-card:hover { border-color: var(--red); box-shadow: 0 2px 16px rgba(208,58,47,0.1); transform: translateY(-1px); }
+    .issue-card .urgency { font-size: 0.7rem; }
+    .issue-card .title { font-weight: 600; font-size: 0.92rem; color: var(--navy); line-height: 1.4; }
+    .issue-card .type-badge { font-size: 0.7rem; font-weight: 500; color: var(--muted); }
+    .issue-card .arrow { font-size: 0.78rem; color: var(--red); font-weight: 600; margin-top: 4px; }
+
+    .cta-strip { background: var(--navy); color: var(--cream); text-align: center; padding: 48px 24px; margin-top: 40px; }
+    .cta-strip h2 { font-family: 'Fraunces', serif; font-size: 1.6rem; margin-bottom: 12px; }
+    .cta-strip p { color: rgba(245,240,232,0.7); margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background: var(--red); color: var(--white); text-decoration: none; font-weight: 600; padding: 13px 30px; border-radius: 8px; }
+
+    footer { background: var(--navy); color: rgba(245,240,232,0.5); font-size: 0.8rem; text-align: center; padding: 24px; }
+    footer a { color: rgba(245,240,232,0.6); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 44px 20px 36px; }
+      .grid-wrap, .filters { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://repreach.app">Rep<span>Reach</span></a>
+  <a class="nav-cta" href="https://testflight.apple.com/join/zP8hpGyP" target="_blank" rel="noopener">Try the App →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>How to Contact Congress on <em>Every Issue That Matters</em></h1>
+    <p>Step-by-step action guides with scripts, representative finder, and context — so you can make your voice heard in under 60 seconds on any issue.</p>
+  </div>
+</section>
+
+<div class="grid-wrap">
+
+  <div class="category-section">
+    <div class="category-label">🏥 Healthcare</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-medicaid-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">Medicaid Cuts</span><span class="type-badge">Federal Bill (OBBBA)</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-snap-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">SNAP Benefit Cuts</span><span class="type-badge">Federal Bill (OBBBA)</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-aca-affordable-care-act"><span class="urgency">🔥🔥🔥</span><span class="title">Protect the ACA</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-medicare-cuts"><span class="urgency">🔥🔥</span><span class="title">Medicare Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-mental-health-funding"><span class="urgency">🔥🔥</span><span class="title">Mental Health Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-opioid-epidemic-funding"><span class="urgency">🔥🔥</span><span class="title">Opioid Crisis Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-planned-parenthood-funding"><span class="urgency">🔥🔥🔥</span><span class="title">Planned Parenthood Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-disability-rights"><span class="urgency">🔥🔥</span><span class="title">Disability Rights</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-insulin-price-cap"><span class="urgency">🔥🔥</span><span class="title">Insulin Pricing</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-public-health-funding"><span class="urgency">🔥🔥</span><span class="title">Public Health Funding Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">🌸 Reproductive Rights</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-reproductive-rights"><span class="urgency">🔥🔥🔥</span><span class="title">Federal Abortion Policy</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-ivf-access"><span class="urgency">🔥🔥🔥</span><span class="title">Protect IVF Access</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-contraception-access"><span class="urgency">🔥🔥</span><span class="title">Contraception Access</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-title-x-family-planning"><span class="urgency">🔥🔥</span><span class="title">Title X Family Planning</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-womens-health-protection-act"><span class="urgency">🔥🔥🔥</span><span class="title">Women's Health Protection Act</span><span class="type-badge">Federal Bill</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">⚖️ Immigration & Civil Rights</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-immigration-enforcement"><span class="urgency">🔥🔥🔥</span><span class="title">ICE Enforcement & Due Process</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-daca-dreamers"><span class="urgency">🔥🔥🔥</span><span class="title">Protect DACA / Dreamers</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-asylum-seekers"><span class="urgency">🔥🔥</span><span class="title">Asylum Policy</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-voting-rights"><span class="urgency">🔥🔥🔥</span><span class="title">Protect Voting Rights</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-lgbtq-protections"><span class="urgency">🔥🔥🔥</span><span class="title">LGBTQ+ Federal Protections</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-transgender-rights"><span class="urgency">🔥🔥🔥</span><span class="title">Transgender Rights</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-racial-equity-dei"><span class="urgency">🔥🔥</span><span class="title">DEI & Racial Equity</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-police-reform"><span class="urgency">🔥</span><span class="title">Federal Police Reform</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">📚 Education</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-department-of-education"><span class="urgency">🔥🔥🔥</span><span class="title">Protect the Dept. of Education</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-public-school-funding"><span class="urgency">🔥🔥🔥</span><span class="title">Public School Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-student-loan-forgiveness"><span class="urgency">🔥🔥</span><span class="title">Student Loan Policy</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-pell-grant-cuts"><span class="urgency">🔥🔥</span><span class="title">Pell Grant Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-title-i-education-funding"><span class="urgency">🔥🔥</span><span class="title">Title I School Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">🌱 Environment & Climate</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-epa-funding-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">EPA Funding Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-climate-change-policy"><span class="urgency">🔥🔥</span><span class="title">Climate Change Policy</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-clean-energy-tax-credits"><span class="urgency">🔥🔥</span><span class="title">Clean Energy Tax Credits</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-national-parks-federal-lands"><span class="urgency">🔥🔥</span><span class="title">National Parks & Federal Lands</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-clean-water-act"><span class="urgency">🔥🔥</span><span class="title">Protect the Clean Water Act</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">💼 Economy & Workers</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-social-security-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">Protect Social Security</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-tariffs-trade-policy"><span class="urgency">🔥🔥🔥</span><span class="title">Tariffs & Trade Policy</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-child-care-funding"><span class="urgency">🔥🔥</span><span class="title">Child Care Funding</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-paid-family-leave"><span class="urgency">🔥🔥</span><span class="title">Paid Family Leave</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-housing-affordability"><span class="urgency">🔥🔥</span><span class="title">Housing Affordability</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-minimum-wage"><span class="urgency">🔥🔥</span><span class="title">Raise the Federal Minimum Wage</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-union-workers-rights"><span class="urgency">🔥🔥</span><span class="title">Workers' Rights & Unions</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">🔫 Gun Safety</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-gun-background-checks"><span class="urgency">🔥🔥</span><span class="title">Universal Background Checks</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-assault-weapons-ban"><span class="urgency">🔥🔥</span><span class="title">Assault Weapons Ban</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-red-flag-laws"><span class="urgency">🔥🔥</span><span class="title">Red Flag Laws</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-label">🗳️ Democracy & Government</div>
+    <div class="issues-grid">
+      <a class="issue-card" href="/issues/contact-congress-doge-government-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">DOGE & Federal Agency Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-usaid-foreign-aid-cuts"><span class="urgency">🔥🔥🔥</span><span class="title">USAID & Foreign Aid Cuts</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-protect-federal-workers"><span class="urgency">🔥🔥🔥</span><span class="title">Protect Federal Workers</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-separation-of-powers"><span class="urgency">🔥🔥🔥</span><span class="title">Defend Congressional Oversight</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-protect-press-freedom"><span class="urgency">🔥🔥🔥</span><span class="title">Protect Press Freedom</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-supreme-court-ethics"><span class="urgency">🔥🔥</span><span class="title">Supreme Court Ethics Reform</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+      <a class="issue-card" href="/issues/contact-congress-campaign-finance-reform"><span class="urgency">🔥🔥</span><span class="title">Campaign Finance Reform</span><span class="type-badge">Federal Issue</span><span class="arrow">Read the guide →</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-strip">
+  <h2>Find Your Representatives in 10 Seconds</h2>
+  <p>Enter your ZIP code in RepReach to see your House rep and both Senators — with direct phone numbers and a ready-made script for any issue.</p>
+  <a class="cta-btn" href="https://testflight.apple.com/join/zP8hpGyP" target="_blank" rel="noopener">Download RepReach (Beta) →</a>
+</div>
+
+<footer>
+  <p><a href="https://repreach.app">RepReach</a> &nbsp;·&nbsp; <a href="https://repreach.app/privacy">Privacy</a> &nbsp;·&nbsp; <a href="https://repreach.app/support">Support</a> &nbsp;&nbsp;|&nbsp;&nbsp; © 2026 Mom Brain Collective LLC</p>
+</footer>
+
+</body>
+</html>
