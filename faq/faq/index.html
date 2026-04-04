@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civic Engagement FAQ — Your Questions Answered | RepReach</title>
+  <meta name="description" content="Answers to every question about contacting your representatives, taking political action, understanding how government works, and making a difference — all in one place." />
+  <link rel="canonical" href="https://repreach.app/faq" />
+  <meta property="og:title" content="Civic Engagement FAQ — Your Questions Answered" />
+  <meta property="og:description" content="Answers to every question about contacting your representatives, taking political action, and making a difference." />
+  <meta property="og:url" content="https://repreach.app/faq" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#0d1b2a;--red:#d03a2f;--cream:#f5f0e8;--gold:#c9973a;--text:#1a1a2e;--muted:#5a6272;--border:#ddd8cc;--white:#ffffff; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+    nav{background:var(--navy);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+    .nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--cream);text-decoration:none;letter-spacing:-0.02em;}
+    .nav-logo span{color:var(--gold);}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+    .nav-links a{color:rgba(245,240,232,0.8);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{background:var(--red);color:var(--white)!important;font-weight:600!important;padding:0.45rem 1.1rem;border-radius:6px;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+    .nav-mobile{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);padding:1.5rem 24px;flex-direction:column;gap:1rem;border-bottom:1px solid rgba(245,240,232,0.1);}
+    .nav-mobile.open{display:flex;}
+    .nav-mobile a{color:rgba(245,240,232,0.85);text-decoration:none;font-size:1rem;font-weight:500;padding:0.3rem 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-mobile a:last-child{border-bottom:none;}
+
+    .hero{background:var(--navy);color:var(--cream);padding:64px 24px 56px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,151,58,0.18) 0%,transparent 70%);pointer-events:none;}
+    .hero-inner{max-width:900px;margin:0 auto;position:relative;}
+    .hero-category{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+    .hero h1{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,2.9rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:16px;line-height:1.15;}
+    .hero h1 em{font-style:italic;color:var(--gold);}
+    .hero-sub{color:rgba(245,240,232,0.78);font-size:1.05rem;max-width:600px;}
+
+    .faq-body{max-width:900px;margin:0 auto;padding:56px 24px 80px;}
+
+    .category-section{margin-bottom:56px;}
+    .category-label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+    .category-title{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--navy);margin-bottom:8px;}
+    .category-desc{color:var(--muted);font-size:0.92rem;margin-bottom:24px;}
+
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+    .faq-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 22px;text-decoration:none;color:var(--text);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;display:flex;flex-direction:column;gap:8px;}
+    .faq-card:hover{border-color:var(--red);box-shadow:0 2px 16px rgba(208,58,47,0.1);transform:translateY(-1px);}
+    .faq-card .q-text{font-weight:600;font-size:0.92rem;color:var(--navy);line-height:1.4;}
+    .faq-card .q-arrow{font-size:0.78rem;color:var(--red);font-weight:600;margin-top:4px;}
+
+    .cta-strip{background:var(--navy);color:var(--cream);text-align:center;padding:56px 24px;margin-top:40px;}
+    .cta-strip h2{font-family:'Fraunces',serif;font-size:1.8rem;margin-bottom:12px;}
+    .cta-strip p{color:rgba(245,240,232,0.7);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;}
+    .cta-btn{display:inline-block;background:var(--red);color:var(--white);text-decoration:none;font-weight:600;padding:14px 32px;border-radius:8px;font-size:1rem;}
+
+    footer{background:var(--navy);color:rgba(245,240,232,0.5);font-size:0.8rem;text-align:center;padding:28px 24px;}
+    footer a{color:rgba(245,240,232,0.6);text-decoration:none;}
+    footer a:hover{color:var(--gold);}
+    @media(max-width:600px){.hero{padding:44px 20px 36px;}.faq-body{padding:40px 20px 64px;}.nav-links{display:none;}.nav-hamburger{display:flex;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="https://repreach.app">Rep<span>Reach</span></a>
+  <ul class="nav-links">
+    <li><a href="https://repreach.app/#features">Features</a></li>
+    <li><a href="https://repreach.app/issues">Action Guides</a></li>
+    <li><a href="https://repreach.app/faq">FAQ</a></li>
+    <li><a href="https://repreach.app/support.html">Support</a></li>
+    <li><a href="https://repreach.app/#download" class="nav-cta">Download Now</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="https://repreach.app/#features">Features</a>
+  <a href="https://repreach.app/issues">Action Guides</a>
+  <a href="https://repreach.app/faq">FAQ</a>
+  <a href="https://repreach.app/support.html">Support</a>
+  <a href="https://repreach.app/#download">Download Now</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-category">Knowledge Base</div>
+    <h1>Your Civic Engagement Questions, <em>Answered</em></h1>
+    <p class="hero-sub">Everything you need to know about contacting your representatives, taking political action, understanding how government works, and making a real difference — without burning out.</p>
+  </div>
+</section>
+
+<div class="faq-body">
+
+  <!-- I FEEL HELPLESS -->
+  <div class="category-section">
+    <div class="category-label">😔 I Feel Helpless</div>
+    <div class="category-title">What can I actually do?</div>
+    <p class="category-desc">For when you care deeply but aren't sure where your effort will actually matter. These pages start with the feeling and end with a clear path forward.</p>
+    <div class="faq-grid">
+      <a class="faq-card" href="https://repreach.app/faq/what-can-i-do-about-politics"><div class="q-text">What can I do about what's happening in politics?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/i-want-to-make-a-difference-but-dont-know-where-to-start"><div class="q-text">I want to make a difference but don't know where to start</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-can-one-person-do-to-change-things"><div class="q-text">What can one person actually do to change things?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/does-contacting-my-representative-matter"><div class="q-text">Does contacting my representative actually matter?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-fight-back-against-medicaid-cuts"><div class="q-text">How can I fight back against Medicaid cuts?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-fight-back-against-doge-cuts"><div class="q-text">How can I fight back against DOGE government cuts?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-fight-back-against-education-cuts"><div class="q-text">How can I fight back against education cuts?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-can-i-do-to-protect-democracy"><div class="q-text">What can I do to protect democracy?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-do-i-make-my-voice-heard-in-government"><div class="q-text">How do I make my voice heard in government?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-can-i-do-if-government-isnt-listening"><div class="q-text">What can I do if I feel like the government isn't listening?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-protect-rights-i-care-about"><div class="q-text">How can I help protect rights I care about?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/scared-about-politics-what-can-i-do"><div class="q-text">I'm scared about what's happening in politics — what can I do?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/most-effective-form-of-political-activism"><div class="q-text">What is the most effective form of political activism?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-get-politically-involved-for-the-first-time"><div class="q-text">How do I get politically involved for the first time?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-can-regular-person-do-to-affect-policy"><div class="q-text">Is there anything a regular person can do to affect policy?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-can-i-do-about-separation-of-powers"><div class="q-text">What can I do to defend congressional oversight?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-do-i-stop-feeling-helpless-about-politics"><div class="q-text">How do I stop feeling helpless about politics?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-take-action-without-burning-out"><div class="q-text">How do I take political action without burning out?</div><span class="q-arrow">Read more →</span></a>
+    </div>
+  </div>
+
+  <!-- HOW TO TAKE ACTION -->
+  <div class="category-section">
+    <div class="category-label">🎯 How to Take Action</div>
+    <div class="category-title">Ready to act — how do I do it?</div>
+    <p class="category-desc">Step-by-step guides for contacting your representatives, writing effective messages, and making your civic engagement count.</p>
+    <div class="faq-grid">
+      <a class="faq-card" href="https://repreach.app/faq/how-do-i-contact-my-representative"><div class="q-text">How do I contact my representative?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-do-i-contact-my-representative-in-congress"><div class="q-text">How do I contact my representative in Congress?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-do-i-say-when-i-call-my-congressman"><div class="q-text">What do I say when I call my congressman?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-write-email-to-senator"><div class="q-text">How do I write an email to my senator?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/fastest-way-to-email-federal-representative"><div class="q-text">What's the fastest way to email my federal representative?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-find-elected-officials-by-address"><div class="q-text">How do I find my elected officials by address?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-find-contact-details-for-congressman"><div class="q-text">How can I find contact details for my congressman?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/does-calling-your-representative-work"><div class="q-text">Does calling your representative actually work?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/best-way-to-contact-congress"><div class="q-text">What's the best way to contact Congress?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/tools-for-contacting-lawmakers"><div class="q-text">Tools for contacting lawmakers about specific issues</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-often-can-i-contact-my-representative"><div class="q-text">How often can I contact my representative?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/app-lets-me-message-state-legislators"><div class="q-text">Which app lets me message my state legislators?</div><span class="q-arrow">Read more →</span></a>
+    </div>
+  </div>
+
+  <!-- I'M OVERWHELMED -->
+  <div class="category-section">
+    <div class="category-label">😫 I'm Overwhelmed</div>
+    <div class="category-title">I care but I'm exhausted</div>
+    <p class="category-desc">For busy parents, overloaded people, and anyone who cares deeply but doesn't have unlimited time or energy to give. This is who RepReach was built for.</p>
+    <div class="faq-grid">
+      <a class="faq-card" href="https://repreach.app/faq/how-can-i-make-a-difference-without-a-lot-of-time"><div class="q-text">How can I make a difference politically without a lot of time?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-do-busy-parents-stay-politically-engaged"><div class="q-text">How do busy parents stay politically engaged?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-stay-informed-without-doom-scrolling"><div class="q-text">How do I stay informed without doom scrolling?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/civic-engagement-for-busy-people"><div class="q-text">Civic engagement for people with busy lives</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/quick-ways-to-take-political-action"><div class="q-text">Quick ways to take political action</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-prioritize-political-issues"><div class="q-text">How do I prioritize which political issues to focus on?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-avoid-political-burnout"><div class="q-text">How do I avoid political burnout?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-stop-feeling-overwhelmed-by-news"><div class="q-text">How do I stop feeling overwhelmed by the news?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/i-care-about-politics-but-dont-have-time"><div class="q-text">I care about politics but don't have time — what can I do?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/minimum-political-action-to-make-a-difference"><div class="q-text">What's the minimum I can do to make a political difference?</div><span class="q-arrow">Read more →</span></a>
+    </div>
+  </div>
+
+  <!-- CIVICS BASICS -->
+  <div class="category-section">
+    <div class="category-label">⚖️ Civics Basics</div>
+    <div class="category-title">How does this all actually work?</div>
+    <p class="category-desc">Clear, accurate explanations of how the American government works — sourced from official government references. No jargon, no assumptions.</p>
+    <div class="faq-grid">
+      <a class="faq-card" href="https://repreach.app/faq/what-does-my-congressman-do"><div class="q-text">What does my congressman actually do?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/difference-between-senator-and-representative"><div class="q-text">What's the difference between a senator and a representative?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-does-a-bill-become-a-law"><div class="q-text">How does a bill become a law?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-is-congressional-oversight"><div class="q-text">What is congressional oversight?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-many-senators-does-each-state-have"><div class="q-text">How many senators does each state have?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-long-do-senators-serve"><div class="q-text">How long do senators serve?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-is-the-house-of-representatives"><div class="q-text">What is the House of Representatives?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-do-i-know-which-congressional-district-i-am-in"><div class="q-text">How do I know which congressional district I'm in?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-is-a-constituent"><div class="q-text">What is a constituent?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/what-happens-when-you-call-congressman-office"><div class="q-text">What happens when you call your congressman's office?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/who-represents-me-in-congress"><div class="q-text">Who represents me in Congress?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/federal-vs-state-representatives"><div class="q-text">What is the difference between federal and state representatives?</div><span class="q-arrow">Read more →</span></a>
+    </div>
+  </div>
+
+  <!-- APP & TOOL -->
+  <div class="category-section">
+    <div class="category-label">📱 App & Tools</div>
+    <div class="category-title">What tools are out there?</div>
+    <p class="category-desc">For people looking for the best apps, tools, and resources to stay civically engaged without spending hours doing research.</p>
+    <div class="faq-grid">
+      <a class="faq-card" href="https://repreach.app/faq/app-to-contact-representatives"><div class="q-text">Is there an app to contact my representatives?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/easiest-way-to-be-civically-active"><div class="q-text">What's the easiest way to be civically active?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/best-app-for-civic-engagement"><div class="q-text">Best app for civic engagement</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/app-that-writes-scripts-for-calling-congress"><div class="q-text">App that writes scripts for calling Congress</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/app-to-find-your-elected-officials"><div class="q-text">App to find your elected officials</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/find-representatives-by-zip-code"><div class="q-text">How do I find my representatives by zip code?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/app-that-tracks-legislation"><div class="q-text">App for tracking legislation</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/app-for-voting-info-and-civic-action"><div class="q-text">App that puts voting info, bills, and civic action all in one place</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/how-to-cut-through-political-news"><div class="q-text">How do I cut through the noise of political news?</div><span class="q-arrow">Read more →</span></a>
+      <a class="faq-card" href="https://repreach.app/faq/best-tools-for-political-activism"><div class="q-text">Best tools for political activism</div><span class="q-arrow">Read more →</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-strip">
+  <h2>Stop Researching. Start Acting.</h2>
+  <p>RepReach puts your representatives, their contact information, personalized scripts, active legislation, and voting tools in one place. Less friction, more impact.</p>
+  <a href="https://repreach.app/#download" class="cta-btn">Download RepReach →</a>
+</div>
+
+<footer>
+  <p><a href="https://repreach.app">RepReach</a> &nbsp;·&nbsp; <a href="https://repreach.app/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://repreach.app/support.html">Support</a> &nbsp;&nbsp;|&nbsp;&nbsp; © 2026 Mom Brain Collective LLC</p>
+</footer>
+<script>function toggleMenu(){document.getElementById('nav-mobile').classList.toggle('open');}</script>
+</body>
+</html>
