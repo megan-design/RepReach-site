@@ -774,7 +774,10 @@
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
-      .two-prong-grid { grid-template-columns: 1fr; }
+      .nav-mobile { display: none; flex-direction: column; gap: 0; background: #0d1b2a; position: absolute; top: 60px; left: 0; right: 0; z-index: 99; padding: 1rem 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { color: rgba(245,240,232,0.85); text-decoration: none; font-size: 1rem; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-mobile a:last-child { border-bottom: none; }      .two-prong-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .reminders-inner { grid-template-columns: 1fr; }
       .mission-inner { grid-template-columns: 1fr; }
