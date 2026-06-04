@@ -34,7 +34,8 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,150,12,.15);border:1px solid rgba(201,150,12,.3);color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
     .hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);color:var(--white);margin-bottom:1.25rem;line-height:1.15}
     .hero h1 em{font-style:italic;color:var(--gold)}
-    .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:2rem;max-width:480px}
+    .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:1rem;max-width:480px}
+    .hero-steps{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,.45);letter-spacing:.04em;margin-bottom:1.75rem}
     .hero-form{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
     .hero-form input[type=email]{flex:1;min-width:220px;padding:.85rem 1.2rem;border-radius:10px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:1rem;outline:none;transition:border-color .2s}
     .hero-form input[type=email]::placeholder{color:rgba(255,255,255,.4)}
@@ -51,10 +52,6 @@
     .app-card-issue{margin-top:1.25rem;background:rgba(201,150,12,.1);border:1px solid rgba(201,150,12,.2);border-radius:var(--radius);padding:1rem 1.25rem}
     .issue-tag{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
     .issue-preview{font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.55}
-    .trust-bar{background:var(--navy-dark);border-bottom:1px solid rgba(201,150,12,.12);padding:1.25rem 5%}
-    .trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
-    .trust-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.5)}
-    .trust-item span:first-child{font-size:1rem}
     .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
     .section-header{max-width:560px}
     .section-header h2{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:1rem}
@@ -147,7 +144,6 @@
     }
     @media(max-width:600px){
       .hero{padding:4rem 5% 3.5rem}
-      .trust-bar-inner{gap:1.25rem;justify-content:flex-start}
       .app-card{max-width:100%}
       .hero-form{flex-direction:column}
       .hero-form input[type=email]{min-width:unset}
@@ -189,6 +185,7 @@
         <p class="hero-eyebrow">&#127381; Founding Club &mdash; First 100 Members Only</p>
         <h1>Civic engagement for <em>the rest of us.</em></h1>
         <p class="hero-sub">The 2026 midterms are coming. Your representatives need to hear from you &mdash; and RepReach makes it possible in under 60 seconds. Join the Founding Club before we open to the public.</p>
+        <p class="hero-steps">tap &nbsp;&middot;&nbsp; script &nbsp;&middot;&nbsp; call &nbsp;&middot;&nbsp; done.</p>
         <form class="hero-form" action="#" method="POST" onsubmit="handleForm(event,'hero')">
           <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" />
           <button type="submit" class="btn btn-gold">Claim Your Spot &rarr;</button>
@@ -222,16 +219,6 @@
       </div>
     </div>
   </section>
-
-  <div class="trust-bar">
-    <div class="trust-bar-inner">
-      <div class="trust-item"><span>&#128203;</span><span>Scripts curated weekly</span></div>
-      <div class="trust-item"><span>&#128506;</span><span>ZIP-code-based rep lookup</span></div>
-      <div class="trust-item"><span>&#9889;</span><span>Contact Congress in 60 seconds</span></div>
-      <div class="trust-item"><span>&#128274;</span><span>No data sold. Ever.</span></div>
-      <div class="trust-item"><span>&#127482;&#127480;</span><span>2026 midterm ready</span></div>
-    </div>
-  </div>
 
   <section class="how-section" id="features">
     <div class="how-inner">
@@ -492,7 +479,7 @@
       });
     });
 
-    // PLACEHOLDER: Replace this function body with your Zapier/email provider webhook call
+    // PLACEHOLDER: Replace this with your Zapier webhook URL when ready
     function handleForm(e, source) {
       e.preventDefault();
       const form = e.target;
@@ -500,8 +487,7 @@
       const nameInput = form.querySelector('input[type="text"]');
       const name = nameInput ? nameInput.value : '';
       // TODO: POST { name, email, source } to your Zapier webhook URL
-      // Example: fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', { method:'POST', body: JSON.stringify({name, email, source}) })
-      console.log('Form submitted:', { name, email, source });
+      // fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', { method:'POST', body: JSON.stringify({name, email, source}) })
       form.innerHTML = '<p style="color:var(--gold);font-weight:600;text-align:center;padding:1rem 0">&#10003; You&rsquo;re on the list! We&rsquo;ll be in touch.</p>';
     }
   </script>
