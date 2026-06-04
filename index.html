@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RepReach — Civic Engagement for the Rest of Us</title>
-  <meta name="description" content="Find your representatives, get personalized call and email scripts, and stay informed on the issues that matter. RepReach makes civic engagement frictionless." />
+  <meta name="description" content="Find your representatives, get personalized call and email scripts, and stay informed on the issues that matter. Join the RepReach Founding Club — first 100 members only." />
   <link rel="canonical" href="https://repreach.app/" />
-
   <meta property="og:title" content="RepReach — Civic Engagement for the Rest of Us" />
-  <meta property="og:description" content="Find your representatives, get personalized call and email scripts, and stay informed on the issues that matter." />
+  <meta property="og:description" content="Find your representatives, get personalized scripts, and make your voice heard before the 2026 midterms. Join the Founding Club." />
   <meta property="og:url" content="https://repreach.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://repreach.app/repreach-logo.png" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,522 +20,137 @@
     "applicationCategory": "UtilitiesApplication",
     "description": "Find your representatives, get personalized call and email scripts, and stay informed on the issues that matter.",
     "url": "https://repreach.app",
-    "publisher": { "@type": "Organization", "name": "Mom Brain Collective LLC", "url": "https://repreach.app" },
-    "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } }
+    "publisher": { "@type": "Organization", "name": "Mom Brain Collective LLC", "url": "https://repreach.app" }
   }
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
-
   <style>
-    .hero {
-      background: var(--navy);
-      padding: 6rem 5% 5rem;
-      position: relative;
-      overflow: hidden;
+    .hero{background:var(--navy);padding:6rem 5% 5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,150,12,.08) 0%,transparent 60%);pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,150,12,.15);border:1px solid rgba(201,150,12,.3);color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
+    .hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);color:var(--white);margin-bottom:1.25rem;line-height:1.15}
+    .hero h1 em{font-style:italic;color:var(--gold)}
+    .hero-sub{font-size:1.15rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:2rem;max-width:480px}
+    .hero-form{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+    .hero-form input[type=email]{flex:1;min-width:220px;padding:.85rem 1.2rem;border-radius:10px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:1rem;outline:none;transition:border-color .2s}
+    .hero-form input[type=email]::placeholder{color:rgba(255,255,255,.4)}
+    .hero-form input[type=email]:focus{border-color:var(--gold)}
+    .hero-note{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.5rem}
+    .hero-visual{display:flex;justify-content:center;align-items:center}
+    .app-card{background:var(--navy-mid);border:1px solid rgba(201,150,12,.2);border-radius:var(--radius-lg);padding:2rem;max-width:340px;width:100%;box-shadow:var(--shadow-lg)}
+    .app-card-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .app-card-rep{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem}
+    .rep-avatar{width:40px;height:40px;border-radius:50%;background:rgba(201,150,12,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .rep-info .rep-name{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--white);font-weight:600}
+    .rep-info .rep-title{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:2px}
+    .rep-action{margin-left:auto;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+    .app-card-issue{margin-top:1.25rem;background:rgba(201,150,12,.1);border:1px solid rgba(201,150,12,.2);border-radius:var(--radius);padding:1rem 1.25rem}
+    .issue-tag{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+    .issue-preview{font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.55}
+    .trust-bar{background:var(--navy-dark);border-bottom:1px solid rgba(201,150,12,.12);padding:1.25rem 5%}
+    .trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.5)}
+    .trust-item span:first-child{font-size:1rem}
+    .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .section-header{max-width:560px}
+    .section-header h2{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:1rem}
+    .section-header p{font-size:1.05rem;color:var(--text-mid);line-height:1.7}
+    .how-section{padding:6rem 5%;background:var(--off-white)}
+    .how-inner{max-width:1100px;margin:0 auto}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
+    .step{background:var(--white);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border)}
+    .step-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--gold-pale);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;border-radius:50%;margin-bottom:1.25rem}
+    .step h3{font-size:1.15rem;color:var(--navy);margin-bottom:.6rem}
+    .step p{font-size:.95rem;color:var(--text-mid);line-height:1.65}
+    .features-section{padding:6rem 5%;background:var(--white)}
+    .features-inner{max-width:1100px;margin:0 auto}
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem}
+    .feature-card{background:var(--off-white);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+    .feature-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+    .feature-icon{font-size:1.8rem;margin-bottom:1rem}
+    .feature-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:.5rem}
+    .feature-card p{font-size:.95rem;color:var(--text-mid);line-height:1.65}
+    .issues-section{padding:6rem 5%;background:var(--navy)}
+    .issues-inner{max-width:1100px;margin:0 auto}
+    .issues-section .section-label{color:rgba(201,150,12,.9)}
+    .issues-section .section-header h2{color:var(--white)}
+    .issues-section .section-header p{color:rgba(255,255,255,.65)}
+    .issue-tags{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
+    .issue-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);font-size:.88rem;font-weight:500;padding:8px 18px;border-radius:24px;transition:all .2s}
+    .issue-pill:hover{background:rgba(201,150,12,.15);border-color:rgba(201,150,12,.4);color:var(--gold)}
+    .issue-pill.hot{background:rgba(201,150,12,.12);border-color:rgba(201,150,12,.3);color:var(--gold-light)}
+    .issues-cta{margin-top:2.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .issues-cta-link{font-size:.9rem;color:rgba(255,255,255,.55);text-decoration:underline;text-underline-offset:3px}
+    .issues-cta-link:hover{color:var(--gold)}
+    .founding-section{padding:6rem 5%;background:var(--gold-pale2);border-top:1px solid var(--gold-pale);border-bottom:1px solid var(--gold-pale)}
+    .founding-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .founding-label{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1.25rem}
+    .founding-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:var(--navy);line-height:1.2;margin-bottom:1rem}
+    .founding-text h2 em{font-style:italic;color:var(--gold)}
+    .founding-text p{font-size:1.05rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}
+    .founding-perks{margin:1.75rem 0;display:flex;flex-direction:column;gap:.9rem}
+    .founding-perk{display:flex;align-items:flex-start;gap:.75rem}
+    .perk-icon{font-size:1.1rem;line-height:1.4;flex-shrink:0}
+    .founding-perk span{font-size:.97rem;color:var(--text-dark);line-height:1.55}
+    .founding-perk strong{color:var(--navy)}
+    .founding-card{background:var(--navy);border-radius:var(--radius-lg);padding:2.5rem;box-shadow:var(--shadow-lg)}
+    .founding-card-header{margin-bottom:1.75rem}
+    .spots-remaining{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:1rem}
+    .spots-bar{height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin-bottom:.5rem;overflow:hidden}
+    .spots-fill{height:100%;width:34%;background:var(--gold);border-radius:3px}
+    .spots-label{font-size:.78rem;color:rgba(255,255,255,.45)}
+    .founding-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:.4rem}
+    .founding-card-sub{font-size:.9rem;color:rgba(255,255,255,.55);margin-bottom:1.5rem}
+    .founding-form{display:flex;flex-direction:column;gap:.75rem}
+    .founding-form input[type=email],.founding-form input[type=text]{width:100%;padding:.85rem 1.2rem;border-radius:10px;border:2px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:1rem;outline:none;transition:border-color .2s}
+    .founding-form input::placeholder{color:rgba(255,255,255,.35)}
+    .founding-form input:focus{border-color:var(--gold)}
+    .founding-form .btn{width:100%;justify-content:center;font-size:1.05rem;padding:1rem}
+    .founding-form-note{font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;margin-top:.25rem}
+    .founding-pricing{display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0;padding:1rem;background:rgba(201,150,12,.1);border:1px solid rgba(201,150,12,.2);border-radius:var(--radius)}
+    .founding-price-main{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold)}
+    .founding-price-detail{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.4}
+    .founding-price-detail s{color:rgba(255,255,255,.35)}
+    .why-section{padding:6rem 5%;background:var(--off-white)}
+    .why-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .why-text .section-header h2{font-size:clamp(1.8rem,3vw,2.4rem)}
+    .why-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem}
+    .why-item{display:flex;gap:1rem;align-items:flex-start}
+    .why-check{width:26px;height:26px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.75rem;font-weight:700;margin-top:2px}
+    .why-item-text strong{display:block;color:var(--navy);font-size:.97rem;margin-bottom:3px}
+    .why-item-text span{font-size:.9rem;color:var(--text-mid);line-height:1.6}
+    .why-card{background:var(--navy);border-radius:var(--radius-lg);padding:2.5rem;color:var(--white)}
+    .why-card-quote{font-family:'Playfair Display',serif;font-size:1.25rem;font-style:italic;line-height:1.55;color:rgba(255,255,255,.88);margin-bottom:1.5rem}
+    .why-card-quote::before{content:'\201C';color:var(--gold)}
+    .why-card-quote::after{content:'\201D';color:var(--gold)}
+    .why-card-stat{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem}
+    .stat-item .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+    .stat-item .stat-label{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:4px}
+    .cta-section{padding:7rem 5%;background:var(--navy-dark);text-align:center}
+    .cta-inner{max-width:620px;margin:0 auto}
+    .cta-inner h2{font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:1rem}
+    .cta-inner h2 em{font-style:italic;color:var(--gold)}
+    .cta-inner p{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:2rem}
+    .cta-form{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+    .cta-form input[type=email]{flex:1;min-width:240px;max-width:340px;padding:.85rem 1.2rem;border-radius:10px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:var(--white);font-family:'Source Sans 3',sans-serif;font-size:1rem;outline:none;transition:border-color .2s}
+    .cta-form input[type=email]::placeholder{color:rgba(255,255,255,.4)}
+    .cta-form input[type=email]:focus{border-color:var(--gold)}
+    .cta-note{font-size:.82rem;color:rgba(255,255,255,.3);margin-top:.75rem}
+    @media(max-width:900px){
+      .hero-inner,.founding-inner,.why-inner{grid-template-columns:1fr;gap:3rem}
+      .hero-visual{order:-1}
+      .steps,.features-grid{grid-template-columns:1fr}
     }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(201,150,12,0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(201,150,12,0.15);
-      border: 1px solid rgba(201,150,12,0.3);
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-      color: var(--white);
-      margin-bottom: 1.25rem;
-      line-height: 1.15;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.7;
-      margin-bottom: 2.25rem;
-      max-width: 480px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-note {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
-      margin-top: 1.25rem;
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .app-card {
-      background: var(--navy-mid);
-      border: 1px solid rgba(201,150,12,0.2);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      max-width: 340px;
-      width: 100%;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .app-card-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .app-card-rep {
-      background: rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .rep-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(201,150,12,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .rep-info .rep-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.95rem;
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .rep-info .rep-title {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.5);
-      margin-top: 2px;
-    }
-
-    .rep-action {
-      margin-left: auto;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 6px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .app-card-issue {
-      margin-top: 1.25rem;
-      background: rgba(201,150,12,0.1);
-      border: 1px solid rgba(201,150,12,0.2);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-    }
-
-    .issue-tag {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .issue-preview {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.55;
-    }
-
-    .trust-bar {
-      background: var(--navy-dark);
-      border-bottom: 1px solid rgba(201,150,12,0.12);
-      padding: 1.25rem 5%;
-    }
-
-    .trust-bar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .trust-item span:first-child { font-size: 1rem; }
-
-    .how-section {
-      padding: 6rem 5%;
-      background: var(--off-white);
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header { max-width: 560px; }
-
-    .section-header h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--navy);
-      margin-bottom: 1rem;
-    }
-
-    .section-header p {
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    .how-inner { max-width: 1100px; margin: 0 auto; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
-
-    .step {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      border: 1px solid var(--border);
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: var(--gold-pale);
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 50%;
-      margin-bottom: 1.25rem;
-    }
-
-    .step h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem; }
-    .step p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; }
-
-    .features-section { padding: 6rem 5%; background: var(--white); }
-    .features-inner { max-width: 1100px; margin: 0 auto; }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .feature-card {
-      background: var(--off-white);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      border: 1px solid var(--border);
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .feature-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-    .feature-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .feature-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 0.5rem; }
-    .feature-card p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; }
-
-    .issues-section { padding: 6rem 5%; background: var(--navy); }
-    .issues-inner { max-width: 1100px; margin: 0 auto; }
-    .issues-section .section-label { color: rgba(201,150,12,0.9); }
-    .issues-section .section-header h2 { color: var(--white); }
-    .issues-section .section-header p { color: rgba(255,255,255,0.65); }
-
-    .issue-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2.5rem;
-    }
-
-    .issue-pill {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.75);
-      font-size: 0.88rem;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: 24px;
-      transition: all 0.2s;
-    }
-
-    .issue-pill:hover {
-      background: rgba(201,150,12,0.15);
-      border-color: rgba(201,150,12,0.4);
-      color: var(--gold);
-    }
-
-    .issue-pill.hot {
-      background: rgba(201,150,12,0.12);
-      border-color: rgba(201,150,12,0.3);
-      color: var(--gold-light);
-    }
-
-    .issues-cta {
-      margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .issues-cta a {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .issues-cta a:hover { color: var(--gold); }
-
-    .why-section { padding: 6rem 5%; background: var(--off-white); }
-
-    .why-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .why-text .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
-
-    .why-list {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .why-item { display: flex; gap: 1rem; align-items: flex-start; }
-
-    .why-check {
-      width: 26px;
-      height: 26px;
-      background: var(--gold-pale);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-
-    .why-item-text strong { display: block; color: var(--navy); font-size: 0.97rem; margin-bottom: 3px; }
-    .why-item-text span { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
-
-    .why-card {
-      background: var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      color: var(--white);
-    }
-
-    .why-card-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-style: italic;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.88);
-      margin-bottom: 1.5rem;
-    }
-
-    .why-card-quote::before { content: '\201C'; color: var(--gold); }
-    .why-card-quote::after { content: '\201D'; color: var(--gold); }
-
-    .why-card-stat {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.5rem;
-    }
-
-    .stat-item .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .stat-item .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
-
-    .pricing-section { padding: 6rem 5%; background: var(--white); }
-
-    .pricing-inner {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .pricing-inner .section-header { max-width: 100%; }
-
-    .pricing-card {
-      background: var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      margin-top: 3rem;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(201,150,12,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .pricing-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-amount {
-      display: flex;
-      align-items: baseline;
-      gap: 0.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-dollar { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(255,255,255,0.6); }
-    .pricing-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; color: var(--white); line-height: 1; }
-    .pricing-period { font-size: 1rem; color: rgba(255,255,255,0.5); }
-    .pricing-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
-
-    .pricing-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .pricing-feature {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.78);
-    }
-
-    .pricing-feature::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 0.85rem; }
-    .pricing-note { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-top: 1rem; }
-
-    .download-section { padding: 7rem 5%; background: var(--navy-dark); text-align: center; }
-
-    .download-inner { max-width: 600px; margin: 0 auto; }
-
-    .download-inner h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 1rem; }
-    .download-inner h2 em { font-style: italic; color: var(--gold); }
-    .download-inner p { font-size: 1.1rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2.5rem; }
-
-    .download-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .download-note { margin-top: 1.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.3); }
-
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-visual { order: -1; }
-      .steps { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .pricing-features { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 600px) {
-      .hero { padding: 4rem 5% 3.5rem; }
-      .trust-bar-inner { gap: 1.25rem; justify-content: flex-start; }
-      .app-card { max-width: 100%; }
-      .pricing-card { padding: 2rem 1.5rem; }
+    @media(max-width:600px){
+      .hero{padding:4rem 5% 3.5rem}
+      .trust-bar-inner{gap:1.25rem;justify-content:flex-start}
+      .app-card{max-width:100%}
+      .hero-form{flex-direction:column}
+      .hero-form input[type=email]{min-width:unset}
     }
   </style>
 </head>
@@ -553,7 +166,7 @@
       <li><a href="#why-repreach">Why RepReach</a></li>
       <li><a href="/issues">Issue Guides</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="#download" class="nav-cta">Download on App Store</a></li>
+      <li><a href="#founding-club" class="nav-cta">Join Founding Club</a></li>
     </ul>
     <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -567,26 +180,21 @@
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
-    <a href="#download" class="btn btn-gold" style="text-align:center;">Download on App Store</a>
+    <a href="#founding-club" class="btn btn-gold" style="text-align:center;">Join Founding Club</a>
   </div>
 
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="hero-eyebrow">&#127482;&#127480; Now in Beta on TestFlight</p>
+        <p class="hero-eyebrow">&#127381; Founding Club &mdash; First 100 Members Only</p>
         <h1>Civic engagement for <em>the rest of us.</em></h1>
-        <p class="hero-sub">
-          Find your representatives in seconds, get a personalized script for any issue, and make your voice heard — in under 60 seconds, from your phone.
-        </p>
-        <div class="hero-actions">
-          <a href="https://testflight.apple.com/join/zP8hpGyP" target="_blank" rel="noopener" class="btn btn-gold">
-            Download on TestFlight &rarr;
-          </a>
-          <a href="/issues" class="btn btn-outline">Browse Issue Guides</a>
-        </div>
-        <p class="hero-note">iOS only &middot; Free beta &middot; $4.99/mo at launch &middot; Cancel anytime</p>
+        <p class="hero-sub">The 2026 midterms are coming. Your representatives need to hear from you &mdash; and RepReach makes it possible in under 60 seconds. Join the Founding Club before we open to the public.</p>
+        <form class="hero-form" action="#" method="POST" onsubmit="handleForm(event,'hero')">
+          <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" />
+          <button type="submit" class="btn btn-gold">Claim Your Spot &rarr;</button>
+        </form>
+        <p class="hero-note">&#128274; No spam, ever. Unsubscribe anytime. &nbsp;&middot;&nbsp; $2.99/mo founding rate (reg. $4.99)</p>
       </div>
-
       <div class="hero-visual">
         <div class="app-card" aria-hidden="true">
           <p class="app-card-label">Your Representatives</p>
@@ -621,7 +229,7 @@
       <div class="trust-item"><span>&#128506;</span><span>ZIP-code-based rep lookup</span></div>
       <div class="trust-item"><span>&#9889;</span><span>Contact Congress in 60 seconds</span></div>
       <div class="trust-item"><span>&#128274;</span><span>No data sold. Ever.</span></div>
-      <div class="trust-item"><span>&#127482;&#127480;</span><span>Federal + state reps</span></div>
+      <div class="trust-item"><span>&#127482;&#127480;</span><span>2026 midterm ready</span></div>
     </div>
   </div>
 
@@ -632,7 +240,6 @@
         <h2>From your ZIP code to your rep&rsquo;s phone &mdash; in three steps.</h2>
         <p>Calling your representative is one of the most effective things a constituent can do. RepReach makes it so simple there&rsquo;s no excuse not to.</p>
       </div>
-
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
@@ -660,7 +267,6 @@
         <h2>Everything you need to stay civically active.</h2>
         <p>RepReach brings together every tool a concerned citizen needs &mdash; in one clean, thoughtful app.</p>
       </div>
-
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">&#128506;</div>
@@ -685,7 +291,7 @@
         <div class="feature-card">
           <div class="feature-icon">&#128371;</div>
           <h3>Voting Hub</h3>
-          <p>Registration deadlines, polling locations, ballot information, and upcoming elections &mdash; all in one place, personalized to your location.</p>
+          <p>Registration deadlines, polling locations, ballot information, and upcoming elections &mdash; everything you need heading into the 2026 midterms.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">&#128276;</div>
@@ -703,7 +309,6 @@
         <h2>Guides for every issue that matters.</h2>
         <p>Step-by-step action pages with context, scripts, and rep links &mdash; for every major federal issue right now.</p>
       </div>
-
       <div class="issue-tags">
         <a class="issue-pill hot" href="/issues/contact-congress-medicaid-cuts">&#128293; Medicaid Cuts</a>
         <a class="issue-pill hot" href="/issues/contact-congress-snap-cuts">&#128293; SNAP Benefits</a>
@@ -722,10 +327,57 @@
         <a class="issue-pill" href="/issues/contact-congress-protect-press-freedom">Press Freedom</a>
         <a class="issue-pill" href="/issues/contact-congress-immigration-enforcement">Immigration &amp; Due Process</a>
       </div>
-
       <div class="issues-cta">
-        <a href="#download" class="btn btn-gold">Get the App for All Issues &rarr;</a>
-        <a href="/issues">Browse all issue guides</a>
+        <a href="#founding-club" class="btn btn-gold">Join to Get All Issues in the App &rarr;</a>
+        <a class="issues-cta-link" href="/issues">Browse free issue guides</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="founding-section" id="founding-club">
+    <div class="founding-inner">
+      <div class="founding-text">
+        <span class="founding-label">&#11088; Founding Club</span>
+        <h2>The 2026 midterms are <em>10 months away.</em> Don&rsquo;t wait.</h2>
+        <p>We&rsquo;re opening early access to the first 100 people who want to make civic engagement a habit before November 2026. Founding members lock in a rate that never goes up &mdash; and get the app the moment it launches.</p>
+        <p>Congressional staffers log every call. Volume moves votes. The closer we get to the midterms, the more every contact matters.</p>
+        <div class="founding-perks">
+          <div class="founding-perk">
+            <span class="perk-icon">&#128274;</span>
+            <span><strong>Lock in $2.99/mo forever</strong> &mdash; regular price will be $4.99/mo at public launch. Your rate never increases.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#9889;</span>
+            <span><strong>First access when the app launches</strong> &mdash; no waiting, no queue.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#127881;</span>
+            <span><strong>Founding member recognition</strong> in the app &mdash; you&rsquo;re part of what makes this possible.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#128172;</span>
+            <span><strong>Direct line to the team</strong> &mdash; your feedback shapes what we build before anyone else sees it.</span>
+          </div>
+        </div>
+      </div>
+      <div class="founding-card">
+        <div class="founding-card-header">
+          <div class="spots-remaining">&#128293; Founding Club spots filling fast</div>
+          <div class="spots-bar"><div class="spots-fill"></div></div>
+          <p class="spots-label">Limited to 100 founding members</p>
+        </div>
+        <h3>Claim Your Founding Club Spot</h3>
+        <p class="founding-card-sub">Enter your info and we&rsquo;ll notify you the moment the app is ready.</p>
+        <div class="founding-pricing">
+          <span class="founding-price-main">$2.99<span style="font-size:1rem;font-weight:400">/mo</span></span>
+          <div class="founding-price-detail">Founding rate &mdash; locked forever<br><s>$4.99/mo</s> at public launch</div>
+        </div>
+        <form class="founding-form" action="#" method="POST" onsubmit="handleForm(event,'founding')">
+          <input type="text" name="name" placeholder="First name" autocomplete="given-name" />
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email" />
+          <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
+          <p class="founding-form-note">No payment now. We&rsquo;ll email you when the app is ready. Cancel anytime.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -769,7 +421,6 @@
           </div>
         </div>
       </div>
-
       <div class="why-visual">
         <div class="why-card">
           <p class="why-card-quote">Civic participation doesn&rsquo;t require a law degree or hours of free time. It requires a phone and a minute &mdash; and RepReach handles the rest.</p>
@@ -792,51 +443,15 @@
     </div>
   </section>
 
-  <section class="pricing-section">
-    <div class="pricing-inner">
-      <div class="section-header">
-        <p class="section-label">Pricing</p>
-        <h2>Simple, honest pricing.</h2>
-        <p>One subscription covers everything &mdash; no tiers, no upsells, no ads.</p>
-      </div>
-
-      <div class="pricing-card">
-        <span class="pricing-badge">Full Access</span>
-        <div class="pricing-amount">
-          <span class="pricing-dollar">$</span>
-          <span class="pricing-num">4.99</span>
-          <span class="pricing-period">/ month</span>
-        </div>
-        <p class="pricing-tagline">Cancel anytime. No contracts. No games.</p>
-        <div class="pricing-features">
-          <span class="pricing-feature">Rep Finder (federal + state)</span>
-          <span class="pricing-feature">Personalized call scripts</span>
-          <span class="pricing-feature">Legislation feed</span>
-          <span class="pricing-feature">Know Your Rights guides</span>
-          <span class="pricing-feature">Voting Hub</span>
-          <span class="pricing-feature">Get Involved section</span>
-          <span class="pricing-feature">Smart reminders</span>
-          <span class="pricing-feature">Weekly issue updates</span>
-        </div>
-        <a href="https://testflight.apple.com/join/zP8hpGyP" target="_blank" rel="noopener" class="btn btn-gold">
-          Try Free on TestFlight &rarr;
-        </a>
-        <p class="pricing-note">Currently free during the beta period via Apple TestFlight. App Store pricing begins at public launch.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="download-section" id="download">
-    <div class="download-inner">
-      <h2>Ready to make your <em>voice heard?</em></h2>
-      <p>Join the RepReach beta. Your representatives work for you &mdash; RepReach helps you remind them of that.</p>
-      <div class="download-actions">
-        <a href="https://testflight.apple.com/join/zP8hpGyP" target="_blank" rel="noopener" class="btn btn-gold">
-          Download on TestFlight &rarr;
-        </a>
-        <a href="/issues" class="btn btn-outline">Browse Issue Guides</a>
-      </div>
-      <p class="download-note">iOS only &middot; Requires Apple TestFlight</p>
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>100 spots. <em>One chance</em> to lock in $2.99/mo.</h2>
+      <p>The midterms won&rsquo;t wait. Neither should you. Join the Founding Club and be the first to use RepReach when it launches.</p>
+      <form class="cta-form" action="#" method="POST" onsubmit="handleForm(event,'cta')">
+        <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+        <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
+      </form>
+      <p class="cta-note">No payment now &middot; No spam &middot; Unsubscribe anytime</p>
     </div>
   </section>
 
@@ -876,6 +491,19 @@
         document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
       });
     });
+
+    // PLACEHOLDER: Replace this function body with your Zapier/email provider webhook call
+    function handleForm(e, source) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[type="email"]').value;
+      const nameInput = form.querySelector('input[type="text"]');
+      const name = nameInput ? nameInput.value : '';
+      // TODO: POST { name, email, source } to your Zapier webhook URL
+      // Example: fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', { method:'POST', body: JSON.stringify({name, email, source}) })
+      console.log('Form submitted:', { name, email, source });
+      form.innerHTML = '<p style="color:var(--gold);font-weight:600;text-align:center;padding:1rem 0">&#10003; You&rsquo;re on the list! We&rsquo;ll be in touch.</p>';
+    }
   </script>
 
 </body>
