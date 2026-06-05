@@ -41,7 +41,6 @@
     .hero-form input[type=email]::placeholder{color:rgba(255,255,255,.4)}
     .hero-form input[type=email]:focus{border-color:var(--gold)}
     .hero-note{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.5rem}
-    /* Phone mockup */
     .hero-visual{display:flex;justify-content:center;align-items:center}
     .phone-frame{width:268px;background:#0e0e0e;border-radius:44px;padding:10px;box-shadow:0 32px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);flex-shrink:0}
     .phone-screen{background:#f5f0e8;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;height:510px}
@@ -81,7 +80,6 @@
     .p-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.45rem;color:#bbb}
     .p-nav-item.active{color:#c9973a}
     .p-nav-icon{font-size:.8rem}
-    /* Shared */
     .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
     .section-header{max-width:560px}
     .section-header h2{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:1rem}
@@ -138,10 +136,6 @@
     .founding-form input:focus{border-color:var(--gold)}
     .founding-form .btn{width:100%;justify-content:center;font-size:1.05rem;padding:1rem}
     .founding-form-note{font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;margin-top:.25rem}
-    .founding-pricing{display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0;padding:1rem;background:rgba(201,150,12,.1);border:1px solid rgba(201,150,12,.2);border-radius:var(--radius)}
-    .founding-price-main{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold)}
-    .founding-price-detail{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.4}
-    .founding-price-detail s{color:rgba(255,255,255,.35)}
     .why-section{padding:6rem 5%;background:var(--off-white)}
     .why-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
     .why-text .section-header h2{font-size:clamp(1.8rem,3vw,2.4rem)}
@@ -221,17 +215,14 @@
           <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" />
           <button type="submit" class="btn btn-gold">Claim Your Spot &rarr;</button>
         </form>
-        <p class="hero-note">&#128274; No spam, ever. Unsubscribe anytime. &nbsp;&middot;&nbsp; $2.99/mo founding rate (reg. $4.99)</p>
+        <p class="hero-note">&#128274; No spam, ever. Unsubscribe anytime.</p>
       </div>
-
       <div class="hero-visual">
         <div class="phone-frame" aria-hidden="true">
           <div class="phone-screen">
             <div class="phone-status">
               <span>2:43</span>
-              <div style="display:flex;gap:5px;align-items:center;font-size:.55rem">
-                <span>&#9646;&#9646;</span><span>&#8767;</span><span>&#9646;</span>
-              </div>
+              <div style="display:flex;gap:5px;align-items:center;font-size:.55rem"><span>&#9646;&#9646;</span><span>&#8767;</span><span>&#9646;</span></div>
             </div>
             <div class="phone-app-header">Your Voice Matters</div>
             <div class="phone-body">
@@ -359,14 +350,26 @@
     <div class="founding-inner">
       <div class="founding-text">
         <span class="founding-label">&#11088; Founding Club</span>
-        <h2>The 2026 midterms are <em>10 months away.</em> Don&rsquo;t wait.</h2>
-        <p>We&rsquo;re opening early access to the first 100 people who want to make civic engagement a habit before November 2026. Founding members lock in a rate that never goes up &mdash; and get the app the moment it launches.</p>
-        <p>Congressional staffers log every call. Volume moves votes. The closer we get to the midterms, the more every contact matters.</p>
+        <h2>Help us amplify <em>what deserves to be heard.</em></h2>
+        <p>We&rsquo;re opening early access to the first 100 people who believe democracy-forward civic engagement needs a better tool. Founding members help shape what RepReach amplifies &mdash; and get the app the moment it launches.</p>
+        <p>There are bills getting buried in committee. Hearings that should be happening but aren&rsquo;t. Stories the headlines glossed over while the news cycle moved on. Founding Members have a direct line to submit what they think deserves attention &mdash; and we amplify what matters.</p>
         <div class="founding-perks">
-          <div class="founding-perk"><span class="perk-icon">&#128274;</span><span><strong>Lock in $2.99/mo forever</strong> &mdash; regular price will be $4.99/mo at public launch. Your rate never increases.</span></div>
-          <div class="founding-perk"><span class="perk-icon">&#9889;</span><span><strong>First access when the app launches</strong> &mdash; no waiting, no queue.</span></div>
-          <div class="founding-perk"><span class="perk-icon">&#127881;</span><span><strong>Founding member recognition</strong> in the app &mdash; you&rsquo;re part of what makes this possible.</span></div>
-          <div class="founding-perk"><span class="perk-icon">&#128172;</span><span><strong>Direct line to the team</strong> &mdash; your feedback shapes what we build before anyone else sees it.</span></div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#128227;</span>
+            <span><strong>Set the agenda.</strong> Submit issues, actions, and overlooked moments for priority review. Your causes, surfaced to users who are ready to act.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#9889;</span>
+            <span><strong>First access when the app launches</strong> &mdash; your download link before anyone else.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#127881;</span>
+            <span><strong>Founding member recognition</strong> in the app &mdash; your name among the first 100 who believed in this.</span>
+          </div>
+          <div class="founding-perk">
+            <span class="perk-icon">&#128172;</span>
+            <span><strong>Direct line to the founder</strong> &mdash; reply to any email and it reaches Megan personally.</span>
+          </div>
         </div>
       </div>
       <div class="founding-card">
@@ -376,16 +379,12 @@
           <p class="spots-label">Limited to 100 founding members</p>
         </div>
         <h3>Claim Your Founding Club Spot</h3>
-        <p class="founding-card-sub">Enter your info and we&rsquo;ll notify you the moment the app is ready.</p>
-        <div class="founding-pricing">
-          <span class="founding-price-main">$2.99<span style="font-size:1rem;font-weight:400">/mo</span></span>
-          <div class="founding-price-detail">Founding rate &mdash; locked forever<br><s>$4.99/mo</s> at public launch</div>
-        </div>
+        <p class="founding-card-sub">First 100 members. Join the waitlist and we&rsquo;ll be in touch the moment the app is ready.</p>
         <form class="founding-form" action="#" method="POST" onsubmit="handleForm(event,'founding')">
           <input type="text" name="name" placeholder="First name" autocomplete="given-name" />
           <input type="email" name="email" placeholder="Email address" required autocomplete="email" />
           <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
-          <p class="founding-form-note">No payment now. We&rsquo;ll email you when the app is ready. Cancel anytime.</p>
+          <p class="founding-form-note">No spam. Unsubscribe anytime.</p>
         </form>
       </div>
     </div>
@@ -400,10 +399,34 @@
           <p>Congressional staffers track every constituent call. Volume and specificity move legislators &mdash; and RepReach gives you both.</p>
         </div>
         <div class="why-list">
-          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Curated by humans, not algorithms</strong><span>Our team reviews and updates issue scripts weekly, sourcing from trusted civic orgs &mdash; not clickbait.</span></div></div>
-          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Nonpartisan by design</strong><span>We show all your representatives regardless of party. Party affiliation is context, not a verdict.</span></div></div>
-          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Built for real people, not policy wonks</strong><span>No jargon. No overwhelming news feeds. Just clear actions you can take in the time you actually have.</span></div></div>
-          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Your data stays yours</strong><span>RepReach does not sell, share, or monetize your personal information. Full stop.</span></div></div>
+          <div class="why-item">
+            <div class="why-check">&#10003;</div>
+            <div class="why-item-text">
+              <strong>Curated by humans, not algorithms</strong>
+              <span>Our team reviews and updates issue scripts weekly, sourcing from trusted civic orgs &mdash; not clickbait.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">&#10003;</div>
+            <div class="why-item-text">
+              <strong>Democracy-forward by design</strong>
+              <span>RepReach amplifies actions that defend democratic process, uphold the rule of law, and hold representatives accountable to the people they serve.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">&#10003;</div>
+            <div class="why-item-text">
+              <strong>Built for real people, not policy wonks</strong>
+              <span>No jargon. No overwhelming news feeds. Just clear actions you can take in the time you actually have.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">&#10003;</div>
+            <div class="why-item-text">
+              <strong>Your data stays yours</strong>
+              <span>RepReach does not sell, share, or monetize your personal information. Full stop.</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="why-visual">
@@ -421,13 +444,13 @@
 
   <section class="cta-section">
     <div class="cta-inner">
-      <h2>100 spots. <em>One chance</em> to lock in $2.99/mo.</h2>
-      <p>The midterms won&rsquo;t wait. Neither should you. Join the Founding Club and be the first to use RepReach when it launches.</p>
+      <h2>100 spots. <em>This is your moment.</em></h2>
+      <p>The midterms won&rsquo;t wait. Join the Founding Club, help set the agenda, and be the first to use RepReach when it launches.</p>
       <form class="cta-form" action="#" method="POST" onsubmit="handleForm(event,'cta')">
         <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
         <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
       </form>
-      <p class="cta-note">No payment now &middot; No spam &middot; Unsubscribe anytime</p>
+      <p class="cta-note">No spam &middot; Unsubscribe anytime</p>
     </div>
   </section>
 
@@ -468,15 +491,18 @@
       });
     });
 
-    // PLACEHOLDER: Replace with your Zapier webhook URL when ready
+    // PLACEHOLDER: Replace fetch URL with your Zapier webhook URL when ready
     function handleForm(e, source) {
       e.preventDefault();
       const form = e.target;
       const email = form.querySelector('input[type="email"]').value;
       const nameInput = form.querySelector('input[type="text"]');
       const name = nameInput ? nameInput.value : '';
-      // TODO: fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', { method:'POST', body: JSON.stringify({name, email, source}) })
-      form.innerHTML = '<p style="color:var(--gold);font-weight:600;text-align:center;padding:1rem 0">&#10003; You&rsquo;re on the list! We&rsquo;ll be in touch.</p>';
+      // TODO: fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', {
+      //   method: 'POST',
+      //   body: JSON.stringify({ name, email, source })
+      // });
+      form.innerHTML = '<p style="color:var(--gold);font-weight:600;text-align:center;padding:1rem 0">&#10003; You&rsquo;re on the list. We&rsquo;ll be in touch.</p>';
     }
   </script>
 
