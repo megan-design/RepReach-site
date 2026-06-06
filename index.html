@@ -211,8 +211,11 @@
         <h1>Civic engagement for <em>the rest of us.</em></h1>
         <p class="hero-sub">The 2026 midterms are coming. Your representatives need to hear from you &mdash; and RepReach makes it possible in under 60 seconds. Join the Founding Club before we open to the public.</p>
         <p class="hero-steps">tap &nbsp;&middot;&nbsp; script &nbsp;&middot;&nbsp; call &nbsp;&middot;&nbsp; done.</p>
-        <form class="hero-form" action="#" method="POST" onsubmit="handleForm(event,'hero')">
-          <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" />
+        <form class="hero-form" action="#" method="POST" onsubmit="handleForm(event,this)">
+          <input type="email" name="EMAIL" placeholder="Enter your email address" required autocomplete="email" />
+          <input type="hidden" name="email_address_check" value="" />
+          <input type="hidden" name="locale" value="en" />
+          <input type="hidden" name="html_type" value="simple" />
           <button type="submit" class="btn btn-gold">Claim Your Spot &rarr;</button>
         </form>
         <p class="hero-note">&#128274; No spam, ever. Unsubscribe anytime.</p>
@@ -354,22 +357,10 @@
         <p>We&rsquo;re opening early access to the first 100 people who believe democracy-forward civic engagement needs a better tool. Founding members help shape what RepReach amplifies &mdash; and get the app the moment it launches.</p>
         <p>There are bills getting buried in committee. Hearings that should be happening but aren&rsquo;t. Stories the headlines glossed over while the news cycle moved on. Founding Members have a direct line to submit what they think deserves attention &mdash; and we amplify what matters.</p>
         <div class="founding-perks">
-          <div class="founding-perk">
-            <span class="perk-icon">&#128227;</span>
-            <span><strong>Set the agenda.</strong> Submit issues, actions, and overlooked moments for priority review. Your causes, surfaced to users who are ready to act.</span>
-          </div>
-          <div class="founding-perk">
-            <span class="perk-icon">&#9889;</span>
-            <span><strong>First access when the app launches</strong> &mdash; your download link before anyone else.</span>
-          </div>
-          <div class="founding-perk">
-            <span class="perk-icon">&#127881;</span>
-            <span><strong>Founding member recognition</strong> in the app &mdash; your name among the first 100 who believed in this.</span>
-          </div>
-          <div class="founding-perk">
-            <span class="perk-icon">&#128172;</span>
-            <span><strong>Direct line to the founder</strong> &mdash; reply to any email and it reaches Megan personally.</span>
-          </div>
+          <div class="founding-perk"><span class="perk-icon">&#128227;</span><span><strong>Set the agenda.</strong> Submit issues, actions, and overlooked moments for priority review. Your causes, surfaced to users who are ready to act.</span></div>
+          <div class="founding-perk"><span class="perk-icon">&#9889;</span><span><strong>First access when the app launches</strong> &mdash; your download link before anyone else.</span></div>
+          <div class="founding-perk"><span class="perk-icon">&#127881;</span><span><strong>Founding member recognition</strong> in the app &mdash; your name among the first 100 who believed in this.</span></div>
+          <div class="founding-perk"><span class="perk-icon">&#128172;</span><span><strong>Direct line to the founder</strong> &mdash; reply to any email and it reaches Megan personally.</span></div>
         </div>
       </div>
       <div class="founding-card">
@@ -380,9 +371,12 @@
         </div>
         <h3>Claim Your Founding Club Spot</h3>
         <p class="founding-card-sub">First 100 members. Join the waitlist and we&rsquo;ll be in touch the moment the app is ready.</p>
-        <form class="founding-form" action="#" method="POST" onsubmit="handleForm(event,'founding')">
-          <input type="text" name="name" placeholder="First name" autocomplete="given-name" />
-          <input type="email" name="email" placeholder="Email address" required autocomplete="email" />
+        <form class="founding-form" action="#" method="POST" onsubmit="handleForm(event,this)">
+          <input type="text" name="FIRSTNAME" placeholder="First name" autocomplete="given-name" />
+          <input type="email" name="EMAIL" placeholder="Email address" required autocomplete="email" />
+          <input type="hidden" name="email_address_check" value="" />
+          <input type="hidden" name="locale" value="en" />
+          <input type="hidden" name="html_type" value="simple" />
           <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
           <p class="founding-form-note">No spam. Unsubscribe anytime.</p>
         </form>
@@ -399,34 +393,10 @@
           <p>Congressional staffers track every constituent call. Volume and specificity move legislators &mdash; and RepReach gives you both.</p>
         </div>
         <div class="why-list">
-          <div class="why-item">
-            <div class="why-check">&#10003;</div>
-            <div class="why-item-text">
-              <strong>Curated by humans, not algorithms</strong>
-              <span>Our team reviews and updates issue scripts weekly, sourcing from trusted civic orgs &mdash; not clickbait.</span>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-check">&#10003;</div>
-            <div class="why-item-text">
-              <strong>Democracy-forward by design</strong>
-              <span>RepReach amplifies actions that defend democratic process, uphold the rule of law, and hold representatives accountable to the people they serve.</span>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-check">&#10003;</div>
-            <div class="why-item-text">
-              <strong>Built for real people, not policy wonks</strong>
-              <span>No jargon. No overwhelming news feeds. Just clear actions you can take in the time you actually have.</span>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-check">&#10003;</div>
-            <div class="why-item-text">
-              <strong>Your data stays yours</strong>
-              <span>RepReach does not sell, share, or monetize your personal information. Full stop.</span>
-            </div>
-          </div>
+          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Curated by humans, not algorithms</strong><span>Our team reviews and updates issue scripts weekly, sourcing from trusted civic orgs &mdash; not clickbait.</span></div></div>
+          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Democracy-forward by design</strong><span>RepReach amplifies actions that defend democratic process, uphold the rule of law, and hold representatives accountable to the people they serve.</span></div></div>
+          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Built for real people, not policy wonks</strong><span>No jargon. No overwhelming news feeds. Just clear actions you can take in the time you actually have.</span></div></div>
+          <div class="why-item"><div class="why-check">&#10003;</div><div class="why-item-text"><strong>Your data stays yours</strong><span>RepReach does not sell, share, or monetize your personal information. Full stop.</span></div></div>
         </div>
       </div>
       <div class="why-visual">
@@ -446,8 +416,11 @@
     <div class="cta-inner">
       <h2>100 spots. <em>This is your moment.</em></h2>
       <p>The midterms won&rsquo;t wait. Join the Founding Club, help set the agenda, and be the first to use RepReach when it launches.</p>
-      <form class="cta-form" action="#" method="POST" onsubmit="handleForm(event,'cta')">
-        <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+      <form class="cta-form" action="#" method="POST" onsubmit="handleForm(event,this)">
+        <input type="email" name="EMAIL" placeholder="Your email address" required autocomplete="email" />
+        <input type="hidden" name="email_address_check" value="" />
+        <input type="hidden" name="locale" value="en" />
+        <input type="hidden" name="html_type" value="simple" />
         <button type="submit" class="btn btn-gold">Claim Your Founding Club Spot &rarr;</button>
       </form>
       <p class="cta-note">No spam &middot; Unsubscribe anytime</p>
@@ -491,17 +464,14 @@
       });
     });
 
-    // PLACEHOLDER: Replace fetch URL with your Zapier webhook URL when ready
-    function handleForm(e, source) {
+    function handleForm(e, form) {
       e.preventDefault();
-      const form = e.target;
-      const email = form.querySelector('input[type="email"]').value;
-      const nameInput = form.querySelector('input[type="text"]');
-      const name = nameInput ? nameInput.value : '';
-      // TODO: fetch('https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/', {
-      //   method: 'POST',
-      //   body: JSON.stringify({ name, email, source })
-      // });
+      const data = new FormData(form);
+      fetch('https://62c46991.sibforms.com/serve/MUIFAKWKHKoZZT-WsOdcHAH29gJWocBIPgBpSSlM_4Y-uDTRH5rcB0K7h-3ibzDF_9F8qmT8EFpiMU2NPWb7Eh5BlOxhAl6wZApZibh5v-AWLiRXBxcJc2iRq9wbwsyf_7xpzhyX6y6nhqskCS6sGlcnrcJa3eSuO8529c0KBBy4CJT9KlbwQMjHdtPQImqlXnJEoTitZbotm7ZwWA==', {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'
+      }).catch(function(){});
       form.innerHTML = '<p style="color:var(--gold);font-weight:600;text-align:center;padding:1rem 0">&#10003; You&rsquo;re on the list. We&rsquo;ll be in touch.</p>';
     }
   </script>
