@@ -91,7 +91,7 @@
   </div>
 
   <div class="doc-body">
-    <span class="doc-updated">Effective Date: November 9, 2026 &nbsp;·&nbsp; Last Updated: November 9, 2026</span>
+    <span class="doc-updated">Effective Date: November 9, 2026 &nbsp;·&nbsp; Last Updated: November 17, 2026</span>
 
     <p>This Privacy Policy explains what information the RepReach mobile app (the "App") and the repreach.app website (the "Website") collect, how it's used, and who it's shared with. RepReach is operated by RealPeople, PLLC, a Washington company ("we," "us," "our").</p>
 
@@ -100,7 +100,7 @@
       <li>We don't sell your information, show ads, or track you across apps or websites.</li>
       <li>The App collects basic, anonymous usage data, such as which screens are opened, through Rork and PostHog. It never includes anything you type.</li>
       <li>There are no RepReach accounts or passwords. Your profile lives on your phone.</li>
-      <li>To work, the App sends some of your information to the services listed below, such as your address to find your district, and your first name, location, and anything you write about yourself to an AI service to write your scripts and drafts.</li>
+      <li>To work, the App sends some of your information to the services listed below, such as your address to find your district, and your first name, location, and, with your permission, anything you write about yourself to Anthropic's Claude AI to write your scripts and drafts.</li>
       <li>We don't store your personal information on our own servers.</li>
     </ul>
 
@@ -130,10 +130,15 @@
     <h2>5. Services that receive your information</h2>
     <p>The App relies on these third-party services. Each handles data under its own privacy policy.</p>
 
-    <p><strong>Rork (app infrastructure and AI service)</strong></p>
+    <p><strong>Rork (app infrastructure)</strong></p>
     <ul>
-      <li>Many of the App's data requests pass through Rork's hosted servers, including requests containing your ZIP code, address, or approximate coordinates when finding your representatives.</li>
-      <li><strong>Rork's AI service</strong> writes the App's AI-generated content. The App sends requests to it directly. See section 6 for exactly what is sent.</li>
+      <li>Some of the App's data requests are first sent to Rork's hosted servers, including requests containing your ZIP code, address, or approximate coordinates when finding your representatives. If Rork's servers are unavailable, the App contacts the services below directly.</li>
+    </ul>
+
+    <p><strong>AI</strong></p>
+    <ul>
+      <li><strong>Anthropic</strong> provides the Claude AI model that writes the App's AI-generated content. See section 6 for exactly what is sent. Review <a href="https://www.anthropic.com/legal/privacy">Anthropic's Privacy Policy</a>.</li>
+      <li><strong>Supabase</strong> hosts our own server, which passes AI requests from the App to Anthropic and returns the result. It does not store what you write.</li>
     </ul>
 
     <p><strong>Address and district lookup</strong></p>
@@ -172,15 +177,15 @@
     </ul>
 
     <h2>6. How RepReach uses AI</h2>
-    <p>When you create a script, email, or comment draft, the App sends the needed information to <strong>Rork's AI service</strong>, a third-party service, which writes the text. Specifically:</p>
+    <p>When you create a script, email, or comment draft, the App sends the needed information through our own server (hosted by Supabase) to <strong>Anthropic's Claude</strong>, a third-party AI service, which writes the text. <strong>The App asks your permission before the first time it sends your personal information to AI</strong>, and nothing personal is sent unless you allow it. You can turn AI-written drafts off or on anytime in Settings. Specifically:</p>
     <ul>
       <li><strong>Call scripts:</strong> your first name, city, ZIP code, and state; your representative's name and role; the issue; and your personal story, if you wrote one.</li>
       <li><strong>Email drafts:</strong> your first name and your <strong>full mailing address, including street address</strong>, because emails to representatives are signed with your name and address; your representative's name and role; the issue; and your personal story, if you wrote one.</li>
       <li><strong>White House scripts:</strong> your first name, city, state, and ZIP code (never your street address); the topic; and your personal story, if you wrote one.</li>
       <li><strong>Public comment drafts:</strong> the regulation's details, your stance, what you wrote, and your name if it's in your profile. No ZIP code, address, or email.</li>
-      <li><strong>Bill and regulation summaries:</strong> public information only, such as bill text, official summaries, and legislative history. No personal information.</li>
+      <li><strong>Bill and regulation summaries and headlines:</strong> public information only, such as bill text, official summaries, Federal Register descriptions, and legislative history. No personal information.</li>
     </ul>
-    <p>If you don't write a personal story, some call scripts use a built-in template and no AI request is made. Don't include information in your story that you wouldn't want shared with an AI service. We may change the AI service we use; if we do, we'll update this policy.</p>
+    <p>If you don't write a personal story, or you choose not to allow AI drafting, call scripts and emails use a built-in template and no AI request is made. Don't include information in your story that you wouldn't want shared with an AI service. We may change the AI service we use; if we do, we'll update this policy.</p>
 
     <h2>7. Messages you send</h2>
     <ul>
